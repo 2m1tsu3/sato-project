@@ -1,0 +1,26 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.2.5.RELEASE'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'spring-boot'
+
+sourceCompatibility = 1.8
+targetCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:1.5.3.RELEASE")
+    compile group: 'org.mybatis', name: 'mybatis', version: '3.4.4'// 追加
+    compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.8.11.2'// 追加
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
