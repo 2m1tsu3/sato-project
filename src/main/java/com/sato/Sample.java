@@ -1,19 +1,29 @@
 package com.sato;
 
-import java.util.List;
 
-import com.sato.dao.Dao;
-import com.sato.dao.DefaultDao;
-import com.sato.dto.tbl.MasterTblDto;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import com.sato.config.AppConfig;
+
+@SpringBootApplication
 public class Sample {
+	
+	@Autowired
+	SampleExecute sampleExecute;
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
-		Dao dao = new DefaultDao();
-		List<MasterTblDto> masterTblDtoList = dao.selectAll();
-	for (MasterTblDto mastarTblDto : masterTblDtoList) {
-		System.out.println("ID: "+ mastarTblDto.getId());
+		try {
+		ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+		
+		sampleExecute.start();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
-	}
+	
 
 }

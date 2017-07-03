@@ -1,4 +1,4 @@
-package com.sato.dao;
+package com.sato.repository;
 
 import java.io.IOException;
 

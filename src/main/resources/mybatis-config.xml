@@ -13,6 +13,6 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="master-mapper.xml"/>
+        <mapper resource="mapper/master-mapper.xml"/>
     </mappers>
 </configuration>
